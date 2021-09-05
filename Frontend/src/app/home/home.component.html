@@ -1,0 +1,141 @@
+<h1> Nifty 50</h1>
+<div *ngIf="showSpinner" class="spinner-grow" role="status">
+	<span class="sr-only">Loading...</span>
+  </div>
+  
+  <div *ngIf="loadCompleted" class="container">
+	<button mat-raised-button class="button"  [routerLink]="['/showrecomm']" class="btn btn-success">Recommend Sector wise Stocks</button>
+ 
+
+<!--
+
+<table  class="table table-striped table-dark table-bordered table-hover" style="width:95%" >
+	<th  *ngFor="let head of headElements" scope="col">{{head}} </th>
+
+	<tbody>
+	  <tr mdbTableCol *ngFor="let nif of mynifty;let i=index">
+		  <td>{{i+1}}</td>
+		<td>{{nif.id}}</td>
+			<td>{{nif.shortname}}</td>
+			<td>{{nif.mktcap}}</td>
+			<td>{{nif.lastvalue}}</td>
+			<td>{{nif.change}}</td>
+			<td>{{nif.percentchange}}</td>
+			<td *ngIf="nif.direction == 1">
+				<mat-icon>trending_up</mat-icon>
+				<td *ngIf="nif.direction == -1">
+					<mat-icon>trending_down</mat-icon>
+			
+			<td>{{nif.volume}}</td>
+	  </tr>
+	</tbody>
+  </table> 
+
+-->
+
+<!--
+
+<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+	<thead>
+	  <tr>
+		<th  *ngFor="let head of headElements" scope="col">{{head}} </th>
+
+	  </tr>
+	</thead>
+	<tbody>
+
+		<tr mdbTableCol *ngFor="let nif of mynifty;let i=index">
+			<td>{{i+1}}</td>
+		  <td>{{nif.id}}</td>
+			  <td>{{nif.shortname}}</td>
+			  <td>{{nif.mktcap}}</td>
+			  <td>{{nif.lastvalue}}</td>
+			  <td>{{nif.change}}</td>
+			  <td>{{nif.percentchange}}</td>
+			  <td *ngIf="nif.direction == 1">
+				  <mat-icon>trending_up</mat-icon>
+				  <td *ngIf="nif.direction == -1">
+					  <mat-icon>trending_down</mat-icon>
+			  
+			  <td>{{nif.volume}}</td>
+		</tr>
+		</tbody>
+		</table>
+		</div>
+		-->
+		<!-- Table with panel -->
+		
+				<!--Table-->
+				
+					<div class="table-responsive">
+					<table  class="table table-striped table-dark table-bordered table-hover" style="width:95%" >
+		  
+				  <!--Table head-->
+				  <thead>
+				  <tr>
+					<th class="th-lg">
+					  <a (click)="sortBy('id')">ID
+						<mat-icon>swap_vert</mat-icon>
+					  </a>
+					</th>
+					<th class="th-lg">
+					  <a (click)="sortBy('shortname')">Shortname
+						<mat-icon>swap_vert</mat-icon>
+					  </a>
+					</th>
+					<th class="th-lg">
+					  <a (click)="sortBy('mktcap')">Mktcap
+						<mat-icon>swap_vert</mat-icon>
+					  </a>
+					</th>
+					<th class="th-lg">
+					  <a (click)="sortBy('lastvalue')">Last value
+						<mat-icon>swap_vert</mat-icon>
+					  </a>
+					</th>
+					<th class="th-lg">
+					  <a (click)="sortBy('change')">Change
+						<mat-icon>swap_vert</mat-icon>
+					  </a>
+					</th>
+					<th class="th-lg">
+					  <a (click)="sortBy('percentchange')">Percentage Change
+						<mat-icon>swap_vert</mat-icon>
+					  </a>
+					</th>
+					<th class="th-lg">
+					  <a (click)="sortBy('direction')">Direction
+						<mat-icon>swap_vert</mat-icon>
+					  </a>
+					</th>
+					<th class="th-lg">
+					  <a (click)="sortBy('volume')">Volume
+						<mat-icon>swap_vert</mat-icon>
+					  </a>
+					</th>
+				  </tr>
+				  </thead>
+		  
+				  <!--Table head-->
+		  
+				  <!--Table body-->
+				  <tbody>
+				  <tr *ngFor="let nif of mynifty;let i = index">
+					<td>{{nif.id}}</td>
+					<td>{{nif.shortname}}</td>
+					<td>{{nif.mktcap}}</td>
+					<td>{{nif.lastvalue}}</td>
+					<td>{{nif.change}}</td>
+					<td>{{nif.percentchange}}</td>
+					<td *ngIf="nif.direction == 1">
+					   <mat-icon class="cl2">trending_up</mat-icon></td>
+				<td *ngIf="nif.direction == -1">
+				  <mat-icon class="cl">trending_down</mat-icon></td>
+					<td>{{nif.volume}}</td>
+				  </tr>
+				  </tbody>
+				  <!--Table body-->
+				</table>
+				
+				</div>
+				<!--Table-->

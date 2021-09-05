@@ -1,0 +1,149 @@
+<div class="alert alert-secondary" role="alert" *ngIf="isSaved==1" >
+  All Recommendations Saved Successfully!
+</div>
+<div  class="alert alert-secondary" role="alert" *ngIf="isSaved==0">
+  Sorry! All Recommendations cannot be saved.
+</div>
+
+<div  class="alert alert-secondary" role="alert" *ngIf="isSavedRow=='1'">
+  Selected Recommendation Saved.
+  
+</div>
+
+
+
+
+<mat-form-field class="dropd">
+  <mat-label>Sector</mat-label>
+  <select matNativeControl [(ngModel)]="selectedCar">
+    <option value="plssel"><b>PLEASE SELECT SECTOR</b></option>
+    <option value="SERVICES">Services</option>
+    <option value="CEMENT_CEMENTPRODUCTS">Cement products</option>
+    <option value="TELECOM">Telecom</option>
+    <option value="CONSTRUCTION">Construction</option>
+    <option value="OIL_GAS">Oil gas</option>
+    <option value="POWER">Power</option>
+    <option value="CONSUMER_GOODS">Consumer Goods</option>
+    <option value="FERTILISERS_PESTICIDES">Fertilisers Pesticides</option>
+    <option value="FINANCIAL_SERVICES">Financial Service</option>
+    <option value="MEDIA_ENTERTAINMENT">Media Entertainment</option>
+    <option value="IT">IT</option>
+    <option value="PHARMA">Pharma</option>
+    <option value="AUTOMOBILE">Automobile</option>
+    <option value="METALS">Metals</option>
+  </select>
+</mat-form-field>
+
+<!--<button mat-raised-button type="ShowGraph" color="primary" (click)=(showGraph_X(msg))  class="btn btn-success">Show Graph</button> -->
+<button mat-raised-button type="go"  (click)=selectedSector() class="btn btn-success">go</button> 
+
+<div *ngIf="showSpinner" class="spinner-grow" role="status">
+  <span class="sr-only">Loading ...</span>
+</div>
+<!--
+{{graphData}}
+<div *ngIf="loadComponent">
+<div  style="display: block" >
+  <canvas mdbChart class="graph"
+      [chartType]="chartType"
+      [datasets]="chartDatasets"
+      [labels]="chartLabels"
+      [colors]="chartColors"
+      [options]="chartOptions"
+      [legend]="true"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)">
+  </canvas>
+  
+</div>
+</div>
+-->
+
+
+
+
+<div *ngIf="loadCompleted" class="container">
+ 
+  <div class="container" >
+
+  
+    <div class="row" >
+
+      <div class="col-md-4" *ngFor="let card of recommstring;let i=index" style="margin-bottom: 4%;margin-top: 3%;margin-left: 10%;"   >
+        <div class="card" >
+
+         
+
+            <mdb-card-body >
+             
+              <div class="card-header" style="background-color: #343A40;color: white   ;
+              ">{{i+1}}. {{card.shortname}}
+              <div style="text-align:end">
+            
+        <button style="background-color: #343A40; border-color:#343A40 ;" (click)=saveRow(card.shortname,card.mktcap,card.lastvalue,card.chg,card.percentchange,card.yearlyhigh,card.yearlylow,card.volume,card.fdayavgvol,card.todaysopen)>
+        <span class="material-icons" style="color: blanchedalmond; ">
+              bookmark_border
+              </span>
+            </button>
+       
+          </div>
+            </div>
+           
+ 
+          
+              <ul class="list-group list-group-flush">
+              
+              
+
+                <li class="list-group-item"> Market Capital: <div class="display_stats">{{card.mktcap}}</div>
+                </li>
+                <li class="list-group-item"> Last Value: <div class="display_stats">{{card.lastvalue}}</div></li>
+                <li class="list-group-item"> Change: <div class="display_stats">{{card.chg}}</div></li>
+
+                <li class="list-group-item"> Percent Change: <div class="display_stats">{{card.percentchange}}%</div></li>
+
+                <li class="list-group-item">Yearly High: <div class="display_stats">{{card.yearlyhigh}}</div></li>
+
+                <li class="list-group-item"> Yearly Low: <div class="display_stats">{{card.yearlylow}}</div></li>
+
+                <li class="list-group-item"> Volume: <div class="display_stats">{{card.volume}}</div></li>
+
+                <li class="list-group-item">5 Days Avg Vol: <div class="display_stats">{{card.fdayavgvol}}</div></li>
+
+                <li class="list-group-item">Todays Open:  <div class="display_stats">{{card.todaysopen}}</div></li>
+
+                <!--<button mat-raised-button type="ShowGraph" color="primary" (click)=(showGraph(card.shortname))  class="btn btn-success">Show Graph</button> -->
+      
+
+
+              
+              </ul>
+       
+            </mdb-card-body>
+        </div>
+      </div>
+    </div>
+       
+      <button mat-raised-button class="button" style="margin-bottom: 8%;margin-left: 40%;" type="submit" color="primary" (click)="saveRecomm()" onclick="scrollWin(0, -50)"   class="btn btn-success">Save Recommendation</button> 
+     
+  </div>
+  
+ 
+
+</div>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

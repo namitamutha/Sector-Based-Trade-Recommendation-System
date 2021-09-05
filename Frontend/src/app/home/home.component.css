@@ -1,0 +1,50 @@
+table {
+    width: 75%;
+    padding: 25;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    font-size: small;
+    margin-left: 3%;
+    overflow-x:auto;
+  }
+  @media only screen and (min-width: 600px){
+    button{
+  
+      float: left;
+      background-color:#3E444A;
+      margin-top: 1.2;
+      }
+    
+  }
+  button{
+  
+    float: right;
+    background-color:#3E444A;
+    margin-top: 1.2;
+    }
+  h1 {  
+    opacity: 0.7 ;
+    background-color: #3E444A;
+    margin-top: 2%;
+     color: #FFFFFF; font-family: 'Helvetica Neue', sans-serif; font-size: 37px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+  .cl{
+    color:red;
+  }
+  .cl2{
+    color:green;
+  }
+   
+
+  th{
+    color:#FFFFFF;
+    background: #607171;
+  }
+
+
+ 
+.spinner-grow{
+  margin-left: 50%;
+  margin-top: 15%;
+}
+
+  

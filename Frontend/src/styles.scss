@@ -1,0 +1,18 @@
+
+html {
+  height: 100%;
+}
+.app-theme1-theme {
+  $my-app-primary: mat-palette($mat-grey, 100);
+  $my-app-accent: mat-palette($mat-grey, 500);
+  $my-app-warn: mat-palette($mat-grey, 900);
+  $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+  @include angular-material-theme($my-app-theme);}
+
+  
+.carousel-item {
+  &.active, &.carousel-item-right, &.carousel-item-next {
+    display: flex !important;
+    flex-wrap: wrap
+  }
+}

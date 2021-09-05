@@ -1,0 +1,41 @@
+
+  table {
+    width: 75%;
+    padding: 25%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: -3%;
+    font-size: small;
+    overflow-x:auto;
+    overflow-y:auto;
+  }
+
+
+  
+  
+  th{
+    color:#FFFFFF;
+    background: #607171;
+  }
+
+  .spinner-grow
+  {
+    margin-left: 50%;
+    margin-top: 15%;
+  }
+
+.video-container
+{
+  
+    margin-left:29%;
+    width: 50%;
+   
+    padding: 10px;
+    margin-top: 10%;
+}
+
+ 
+
+
+  /**/
+

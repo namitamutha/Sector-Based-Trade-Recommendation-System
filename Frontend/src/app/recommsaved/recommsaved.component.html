@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div *ngIf="showSpinner" class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div *ngIf="loadCompleted" class="container">
+
+  <div *ngIf="isEmptySaved">
+<div class="video-container">
+    <video id="video" playsinline="" muted="" autoplay="" loop="" data-silent="true" src="https://cdn.dribbble.com/users/308895/screenshots/2598725/no-results.gif?vid=1">
+    </video>
+    </div>
+  </div>
+
+<div *ngIf="!isEmptySaved">
+  <mat-form-field class="dropd2" style="margin-left: 2%;">
+    <mat-label>Filter</mat-label>
+    <select matNativeControl [(ngModel)]="selectedTS">
+      <option value="All"><b>All</b></option>
+      <option value="week">Last 5 Days</option>
+      <option value="month">Last 30 Days</option>
+      <option value="year">Last Year</option>
+    </select>
+   
+   </mat-form-field>
+   <button mat-raised-button class="button" style="margin-bottom: 8%;margin-left: 10%;margin-top:3%" type="submit" color="primary" (click)=GoFilter() class="btn btn-success" >Go</button> 
+   <button mat-raised-button class="button"  style="margin-left: 12%;" type="submit" color="primary" (click)=DelAll();refresh(); class="btn btn-success">Delete All</button> 
+
+   <div class="table-responsive">
+<table *ngIf="!flagTS" class="table table-striped table-dark table-bordered table-hover" style="margin-top:0.2%;margin-left: 1%;" id="myTable" >
+	<th  *ngFor="let head of headElement" scope="col">{{head}} </th>
+  <tbody>
+    <tr mdbTableCol *ngFor="let recom of mysavedrecom;let i=index">
+      <td>{{i+1}}</td>
+      <td>{{recom.timestamp_to_display}}</td>
+
+          <td>{{recom.shortname}}</td>
+          <td>{{recom.mktcap}}</td>
+          <td>{{recom.lastvalue}}</td>
+          <td>{{recom.chg}}</td>
+          <td>{{recom.percentchange}}</td>
+          <td>{{recom.yearlyhigh}}</td>
+          <td>{{recom.yearlylow}}</td>
+          <td>{{recom.volume}}</td>
+          <td>{{recom.fdayavgvol}}</td>
+          <td>{{recom.todaysopen}}</td>
+          <td><button class="btn" onclick="window.location.reload();"
+
+             [routerLink]="['/recommsaved']" (click)=Delrow(recom.timestamp1,recom.shortname)><i class="fa fa-trash" style="color: blanchedalmond;"></i></button>
+          </td>
+      </tr>
+      </tbody>
+</table>
+</div>
+
+
+<table *ngIf="flagTS" class="table table-striped table-dark table-bordered table-hover" style="margin-top:0.2%;margin-left: 1%;">
+	<th  *ngFor="let head of headElement;" scope="col">{{head}} </th>
+  <tbody>
+    <tr mdbTableCol *ngFor="let recom of  savedrecommTS;let i=index">
+      <td>{{i+1}}</td>
+      <td>{{recom.timestamp_to_display}}</td>
+          <td>{{recom.shortname}}</td>
+          <td>{{recom.mktcap}}</td>
+          <td>{{recom.lastvalue}}</td>
+          <td>{{recom.chg}}</td>
+          <td>{{recom.percentchange}}</td>
+          <td>{{recom.yearlyhigh}}</td>
+          <td>{{recom.yearlylow}}</td>
+          <td>{{recom.volume}}</td>
+          <td>{{recom.fdayavgvol}}</td>
+          <td>{{recom.todaysopen}}</td>
+          <td><button class="btn" onclick="window.location.reload();"
+
+            [routerLink]="['/recommsaved']" (click)=Delrow(recom.timestamp1,recom.shortname)><i class="fa fa-trash" style="color: blanchedalmond;"></i></button>
+         </td>
+          
+
+      </tr>
+      </tbody>
+</table>
+</div>
+
+
+</div>

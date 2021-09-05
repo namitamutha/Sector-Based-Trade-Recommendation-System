@@ -1,0 +1,12 @@
+
+mat-card{
+    display:flex;
+
+}
+
+.login-card{
+    position:relative; 
+    left:20px;
+    top:200px;
+}
+

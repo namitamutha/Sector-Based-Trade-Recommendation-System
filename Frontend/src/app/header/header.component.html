@@ -1,0 +1,26 @@
+<header>
+    
+    <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+   
+
+        <div><a href="Stokies" class="navbar-brand">Stockies</a></div>
+    
+
+    <ul class="navbar-nav">
+
+      <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="" class="nav-link">Login</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/home" class="nav-link">Home</a></li>
+      <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/signup" class="nav-link">SignUp</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/showrecomm" class="nav-link"><p>Recommend Sector wise stocks</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/recommsaved" class="nav-link">Recommendations Saved</a></li>
+      <li (click)="openDialog()"><a  *ngIf="loginService.isUserLoggedIn()" class="nav-link">LogOut</a></li>
+
+
+
+
+    </ul>
+     
+    </nav>
+   
+    </header>
+

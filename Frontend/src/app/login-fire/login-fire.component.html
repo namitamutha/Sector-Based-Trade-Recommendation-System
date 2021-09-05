@@ -1,0 +1,42 @@
+<div class="bg"></div>
+<div class="container">
+   <!-- <div>
+      User Name : <input type="text" name="username" [(ngModel)]="username"><br>
+      Password : <input type="password" name="password" [(ngModel)]="password">
+    </div>
+    <button (click)=checkLogin() class="btn btn-success">
+      Login
+    </button>
+  -->
+  <div  class="login-card"  fxLayoutAlign="center center" fxFlexFill  >
+    <mat-card  class="login-size">
+        <!--<mat-toolbar color="primary"><span class="span">Stockies</span></mat-toolbar>-->
+        <form fxLayoutAlign="stretch" fxLayout="column" layout-align="center center">
+            <mat-form-field>
+            
+              <input matInput type="text" name="username" [(ngModel)]="username" placeholder="User name">
+              <!--<input matInput placeholder="User name">-->
+            </mat-form-field>
+            <mat-form-field>
+            
+              <input matInput type="password" name="password" [(ngModel)]="password" placeholder="Password">
+                <!--<input matInput placeholder="Password">-->
+              </mat-form-field>
+          <button mat-raised-button type="submit" color="primary" (click)=checkLogin_fire() class="btn btn-success">Login</button> 
+          
+          
+          </form>
+          <div *ngIf="showSpinner" class="spinner-grow" role="status" >
+          </div>
+          
+    </mat-card>
+
+    
+</div>
+
+
+
+
+  </div>
+
+  

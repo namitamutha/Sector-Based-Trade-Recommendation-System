@@ -1,0 +1,26 @@
+<div class="bg"></div>
+<div class="container">
+ 
+  <div  style = "position:relative; left:20px; top:200px;" fxLayoutAlign="center center" fxFlexFill >
+    <mat-card >
+        <form fxLayoutAlign="stretch" fxLayout="column" layout-align="center center">
+            <mat-form-field>
+            
+              <input matInput type="text" name="username" [(ngModel)]="username" placeholder="User name">
+            </mat-form-field>
+            <mat-form-field>
+            
+              <input matInput type="password" name="password" [(ngModel)]="password" placeholder="Password">
+  
+            </mat-form-field>
+          <button mat-raised-button type="submit" color="primary" (click)=Signup() class="btn btn-success">Sign Up!</button> 
+          
+          
+          </form>
+          
+    </mat-card>
+
+    
+</div>
+  </div>
+

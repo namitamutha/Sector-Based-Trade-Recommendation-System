@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css);
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+/*@import "/src/theme.scss";*/
+
+body{
+    margin:0;
+    padding:0;
+}
+body::before{
+z-index:-1;
+content: '';
+position: fixed;
+width: 100vw;
+height: 100vh;
+background-image: url(background.jpg);
+background-position: center center;
+background-repeat:no-repeat;
+background-attachment: fixed;
+-webkit-background-size:cover;
+background-size: cover;
+-webkit-filter: blur(3px);
+-moz-filter:blur(3px);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
